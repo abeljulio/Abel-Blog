@@ -8,6 +8,9 @@ export default function Home({ posts }) {
     <div className="container mx-auto mb-8 px-10">
       <Head>
         <title>Abel Blog | Homepage</title>
+        <meta name="author" content="Abel Julio" />
+        <meta name="description" content="Abel Blog Homepage" />
+        <meta name="keywords" content="Abel Julio, Abel Blog" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <FeaturedPosts />

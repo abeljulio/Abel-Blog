@@ -4,7 +4,6 @@ import { submitComment } from '../services'
 
 const CommentsForm = ({ slug }) => {
   const [error, setError] = useState(false)
-  const [localStorage, setLocalStorage] = useState(null)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
   const commentEl = useRef()
   const nameEl = useRef()
@@ -57,7 +56,7 @@ const CommentsForm = ({ slug }) => {
         <textarea
           ref={commentEl}
           className="min-h-[60px] w-full rounded-lg bg-gray-100 p-4 text-gray-700 outline-none
-          focus:ring-2 focus:ring-gray-200"
+          focus:ring-2 focus:ring-blue-200"
           placeholder="Comment"
           name="comment"
         />
@@ -66,14 +65,14 @@ const CommentsForm = ({ slug }) => {
         <input
           type="text"
           ref={nameEl}
-          className="w-full rounded-lg bg-gray-100 py-2 px-4 text-gray-700 outline-none focus:ring-2 focus:ring-gray-200"
+          className="w-full rounded-lg bg-gray-100 py-2 px-4 text-gray-700 outline-none focus:ring-2 focus:ring-blue-200"
           placeholder="Name"
           name="name"
         />
         <input
           type="email"
           ref={emailEl}
-          className="w-full rounded-lg bg-gray-100 py-2 px-4 text-gray-700 outline-none focus:ring-2 focus:ring-gray-200"
+          className="w-full rounded-lg bg-gray-100 py-2 px-4 text-gray-700 outline-none focus:ring-2 focus:ring-blue-200"
           placeholder="Email"
           name="email"
         />
@@ -108,9 +107,9 @@ const CommentsForm = ({ slug }) => {
           Post Comment
         </button>
         {showSuccessMessage && (
-          <span className="float-right mt-3 text-xl font-semibold text-green-500">
-            Comment submitted for review
-          </span>
+          <div className="fixed top-12 left-1/2 z-10 w-1/2 -translate-x-1/2 rounded-lg bg-green-300/90 px-5 py-7 text-lg font-semibold  shadow-lg backdrop-blur-lg">
+            <p>Comment submitted for review!</p>
+          </div>
         )}
       </div>
     </div>
