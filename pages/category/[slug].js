@@ -21,7 +21,7 @@ const CategoryPost = ({ posts }) => {
         <meta name="description" content="Abel Blog Category" />
         <meta name="keywords" content="Abel Blog Category" />
       </Head>
-      <div className="container mx-auto mb-8 px-10">
+      <div className="container mx-auto mb-8 px-3 md:px-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="col-span-1 lg:col-span-8">
             {posts.map((post, index) => (

@@ -11,7 +11,7 @@ const Categories = () => {
   }, [])
 
   return (
-    <div className="mb-8 rounded-lg bg-white p-8 shadow-lg">
+    <div className="rounded-lg bg-white p-8 shadow-lg">
       <h3 className="mb-8 border-b pb-4 text-xl font-semibold">Categories</h3>
       <div className="max-h-20 overflow-y-auto">
         {categories.map((category) => (

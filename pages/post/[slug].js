@@ -23,6 +23,10 @@ const PostDetails = ({ post }) => {
         <title>Abel Blog | {post.title}</title>
         <meta name="author" content={post.author} />
         <meta name="description" content={post.excerpt} />
+        <meta
+          name="keywords"
+          content={`Abel Blog ${post.title}, ${post.title}`}
+        />
       </Head>
       <div className="container mx-auto mb-8 px-3 md:px-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">

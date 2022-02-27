@@ -5,7 +5,7 @@ import { FeaturedPosts } from '../section'
 
 export default function Home({ posts }) {
   return (
-    <div className="container mx-auto mb-8 px-10">
+    <>
       <Head>
         <title>Abel Blog | Homepage</title>
         <meta name="author" content="Abel Julio" />
@@ -13,21 +13,23 @@ export default function Home({ posts }) {
         <meta name="keywords" content="Abel Julio, Abel Blog" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <FeaturedPosts />
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-        <div className="col-span-1 lg:col-span-8">
-          {posts.map((post) => (
-            <PostCard post={post.node} key={post.node.title} />
-          ))}
-        </div>
-        <div className="col-span-1 lg:col-span-4">
-          <div className="relative top-4 lg:sticky">
-            <PostWidget />
-            <Categories />
+      <div className="container mx-auto mb-8 px-3 md:px-10">
+        <FeaturedPosts />
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+          <div className="col-span-1 lg:col-span-8">
+            {posts.map((post) => (
+              <PostCard post={post.node} key={post.node.title} />
+            ))}
+          </div>
+          <div className="col-span-1 lg:col-span-4">
+            <div className="relative top-4 lg:sticky">
+              <PostWidget />
+              <Categories />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

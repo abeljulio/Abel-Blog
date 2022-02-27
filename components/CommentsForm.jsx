@@ -84,7 +84,6 @@ const CommentsForm = ({ slug }) => {
             type="checkbox"
             id="storeData"
             name="storeData"
-            value={true}
           />
           <label
             htmlFor="storeData"
@@ -95,7 +94,7 @@ const CommentsForm = ({ slug }) => {
         </div>
       </div>
       {error && (
-        <p className="text-xs text-red-500">All fields are required.</p>
+        <p className="text-xs text-red-500">* All fields are required.</p>
       )}
       <div className="mt-8">
         <button
@@ -107,7 +106,21 @@ const CommentsForm = ({ slug }) => {
           Post Comment
         </button>
         {showSuccessMessage && (
-          <div className="fixed top-12 left-1/2 z-10 w-1/2 -translate-x-1/2 rounded-lg bg-green-300/90 px-5 py-7 text-lg font-semibold  shadow-lg backdrop-blur-lg">
+          <div className="fixed top-12 left-1/2 z-10 flex w-4/5 -translate-x-1/2 items-start space-x-3 rounded-lg bg-emerald-200/80 px-5 py-7 text-lg font-semibold text-emerald-600 shadow-lg drop-shadow-2xl backdrop-blur-lg md:w-3/5 md:items-center lg:w-1/2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
             <p>Comment submitted for review!</p>
           </div>
         )}
