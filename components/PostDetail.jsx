@@ -56,7 +56,7 @@ const PostDetail = ({ post }) => {
         )
       case 'paragraph':
         return (
-          <p key={index} className="mb-8">
+          <p key={index} className="mb-4">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -82,7 +82,7 @@ const PostDetail = ({ post }) => {
         )
       case 'numbered-list':
         return (
-          <ol key={index} className="list-decimal">
+          <ol key={index} className="ml-5 mb-4 list-decimal space-y-2">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
