@@ -7,7 +7,7 @@ const PostDetail = ({ post }) => {
 
     if (obj) {
       if (obj.bold) {
-        modifiedText = <b key={index}>{text}</b>
+        modifiedText = <strong key={index}>{text}</strong>
       }
 
       if (obj.italic) {
@@ -16,6 +16,32 @@ const PostDetail = ({ post }) => {
 
       if (obj.underline) {
         modifiedText = <u key={index}>{text}</u>
+      }
+      if (obj.type === 'link') {
+        modifiedText = (
+          <a
+            key={index}
+            href={obj.href}
+            title={obj.title}
+            target={obj.openInNewTab ? '_blank' : ''}
+            className="text-blue-900 hover:underline"
+          >
+            {obj.children[0].text}
+          </a>
+        )
+      }
+      if (obj.type === 'list-item') {
+        modifiedText = (
+          <li key={index}>
+            {obj.children[0].children.map((textItem, textIndex) =>
+              textItem.underline ? (
+                <u key={textIndex}>{textItem.text}</u>
+              ) : (
+                textItem.text
+              )
+            )}
+          </li>
+        )
       }
     }
 
@@ -53,6 +79,14 @@ const PostDetail = ({ post }) => {
             width={obj.width}
             src={obj.src}
           />
+        )
+      case 'numbered-list':
+        return (
+          <ol key={index} className="list-decimal">
+            {modifiedText.map((item, i) => (
+              <React.Fragment key={i}>{item}</React.Fragment>
+            ))}
+          </ol>
         )
       default:
         return modifiedText

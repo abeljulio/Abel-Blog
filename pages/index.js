@@ -11,7 +11,6 @@ export default function Home({ posts }) {
         <meta name="author" content="Abel Julio" />
         <meta name="description" content="Abel Blog Homepage" />
         <meta name="keywords" content="Abel Julio, Abel Blog" />
-        <link rel="icon" href="/logo.ico" />
       </Head>
       <div className="container mx-auto mb-8 px-3 md:px-10">
         <FeaturedPosts />
